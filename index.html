@@ -96,6 +96,25 @@ footer p { margin:0; }
  .call-context br { display:none; }
 }
 
+
+/* A concise view of the engagement, after the outcomes. */
+.partnership { margin-top:26px; padding:22px; border:1px solid var(--line); border-radius:13px; background:#f8fafc; }
+.partnership-heading { display:flex; align-items:baseline; justify-content:space-between; flex-wrap:wrap; gap:8px 20px; }
+.partnership-heading h2 { color:var(--navy); font-size:20px; margin:0; }
+.starting-price { margin:0; color:var(--muted); font-size:15px; }
+.starting-price strong { color:var(--navy); font-weight:600; }
+.phases { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); list-style:none; padding:0; margin:22px 0 0; gap:22px; }
+.phases li { position:relative; display:flex; align-items:center; gap:11px; }
+.phase-number { flex-shrink:0; display:grid; place-items:center; width:34px; height:34px; border:1px solid #c6d8ce; border-radius:50%; color:var(--green); background:#edf7f1; font-family:Outfit,sans-serif; font-size:15px; font-weight:600; }
+.phase-label { display:block; color:var(--muted); font-size:11px; text-transform:uppercase; letter-spacing:.06em; }
+.phase-name { display:block; color:var(--navy); font-family:Outfit,sans-serif; font-size:17px; font-weight:500; }
+.phases li:not(:last-child)::after { content:'→'; color:#8b9bad; position:absolute; right:-12px; font-size:20px; }
+@media (max-width:720px) {
+ .partnership { padding:19px; }
+ .phases { grid-template-columns:1fr; gap:23px; margin-top:21px; }
+ .phases li:not(:last-child)::after { content:''; width:1px; height:15px; background:#c6d8ce; left:16px; right:auto; top:40px; }
+}
+
 </style>
 </head>
 <body>
@@ -119,6 +138,17 @@ footer p { margin:0; }
         <section class="outcome"><h3>Customer questionnaires handled</h3><p>SCI drafts responses, gathers supporting information, and manages follow-up. CEC reviews the answers and provides the facts and approvals only your team can give.</p></section>
         <section class="outcome"><h3>A managed program through the report</h3><p>A clear gap list with owners, visibility into outstanding items, and SCI handling auditor requests through issuance. You know what CEC needs to decide or complete.</p></section>
       </div>
+    </section>
+    <section class="partnership" aria-labelledby="partnership-heading">
+      <div class="partnership-heading">
+        <h2 id="partnership-heading">A 4-person SCI team behind you</h2>
+        <p class="starting-price">SCI support starting at <strong>$3,000/month</strong></p>
+      </div>
+      <ol class="phases" aria-label="The three phases of your SCI engagement">
+        <li><span class="phase-number" aria-hidden="true">1</span><div><span class="phase-label">Phase 1</span><span class="phase-name">Onboarding</span></div></li>
+        <li><span class="phase-number" aria-hidden="true">2</span><div><span class="phase-label">Phase 2</span><span class="phase-name">Implementation</span></div></li>
+        <li><span class="phase-number" aria-hidden="true">3</span><div><span class="phase-label">Phase 3</span><span class="phase-name">Optimization</span></div></li>
+      </ol>
     </section>
     <p class="tool-context">SCI partners with a compliance tool to help get the work done. CEC doesn’t need to have one in place before we start.</p>
     <div class="next-step">
